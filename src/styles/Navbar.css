@@ -1,0 +1,124 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 1.5rem 0;
+}
+
+.navbar.scrolled {
+    padding: 1rem 0;
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--text-main);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: flex;
+        position: absolute;
+        background:#272729;
+        top: 100%;
+        left: 5%;
+        right: 5%;
+        flex-direction: column;
+        padding: 2rem;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav.open {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(10px);
+    }
+
+    .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+
+    .mobile-nav-link {
+        font-size: 1.1rem;
+        color: var(--text-main);
+        font-weight: 500;
+    }
+}
