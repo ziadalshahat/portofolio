@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { FiMail, FiGithub, FiLinkedin, FiSend } from 'react-icons/fi';
 import '../styles/Contact.css';
 
@@ -35,7 +36,13 @@ const Contact = () => {
     return (
         <section id="contact" className="contact-section">
             <div className="container">
-                <div className="contact-content animate-slide-up">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7 }}
+                    className="contact-content"
+                >
                     <div className="contact-info">
                         <h2 className="section-title">
                             Let's <span className="highlight">Connect</span>
@@ -110,7 +117,7 @@ const Contact = () => {
                             </p>
                         )}
                     </form>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

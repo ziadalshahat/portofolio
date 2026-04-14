@@ -20,13 +20,13 @@
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-hover);
 }
 
 .project-image-placeholder {
     height: 200px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    background: var(--bg-elevated);
     position: relative;
     display: flex;
     align-items: center;
@@ -37,8 +37,9 @@
 .project-watermark {
     font-size: 5rem;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.03);
+    color: var(--bg-card);
     letter-spacing: -2px;
+    opacity: 0.3;
 }
 
 .project-overlay {
@@ -47,7 +48,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(9, 9, 11, 0.8);
+    background: var(--overlay-bg);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     display: flex;
@@ -79,15 +80,14 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: var(--text-main);
-    color: var(--bg-dark);
+    background: var(--accent);
+    color: #ffffff;
     transition: all 0.2s ease;
 }
 
 .project-link:hover {
     transform: scale(1.1);
-    background: var(--accent);
-    color: #fff;
+    background: var(--accent-hover);
 }
 
 .project-content {
@@ -101,7 +101,7 @@
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: var(--text-main);
+    color: var(--text-heading);
 }
 
 .project-description {
@@ -123,9 +123,9 @@
     font-weight: 500;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--tag-bg);
+    color: var(--accent);
+    border: 1px solid var(--border);
 }
 
 @media (max-width: 768px) {

@@ -15,9 +15,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background:
-        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 50%),
-        radial-gradient(circle at 85% 30%, rgba(147, 51, 234, 0.1), transparent 50%);
+    background: var(--gradient-hero);
     filter: blur(80px);
     z-index: 0;
     animation: pulseBg 10s ease-in-out infinite alternate;
@@ -49,8 +47,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 9999px;
     font-size: 0.875rem;
     color: var(--text-muted);
@@ -86,15 +84,7 @@
     line-height: 1.1;
     letter-spacing: -1.5px;
     margin-bottom: 1.5rem;
-}
-
-.highlight {
-    position: relative;
-    display: inline-block;
-    color: transparent;
-    background: linear-gradient(to right, #FAFAFA, #A1A1AA);
-    -webkit-background-clip: text;
-    background-clip: text;
+    color: var(--text-heading);
 }
 
 .hero-tagline {
@@ -102,16 +92,12 @@
     color: var(--text-muted);
     max-width: 600px;
     margin-bottom: 2.5rem;
-    opacity: 0;
-    /* for animation */
 }
 
 .hero-actions {
     display: flex;
     gap: 1rem;
     margin-bottom: 3rem;
-    opacity: 0;
-    /* for animation */
 }
 
 .btn-icon {
@@ -127,8 +113,6 @@
 .hero-socials {
     display: flex;
     gap: 1.5rem;
-    opacity: 0;
-    /* for animation */
 }
 
 .social-icon {
@@ -140,15 +124,16 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
 }
 
 .social-icon:hover {
-    color: var(--text-main);
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent);
+    background: var(--bg-card-hover);
     transform: translateY(-3px);
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-sm);
 }
 
 @media (max-width: 768px) {

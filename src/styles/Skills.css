@@ -1,7 +1,7 @@
 .skills-section {
     padding: 6rem 0;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--bg-secondary);
 }
 
 .section-header {
@@ -31,7 +31,7 @@
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: var(--text-main);
+    color: var(--text-heading);
     border-left: 3px solid var(--accent);
     padding-left: 1rem;
 }
@@ -70,8 +70,8 @@
 
 .skill-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-md);
 }
 
 .skill-card:hover::before {
@@ -100,6 +100,10 @@
 
 .skill-card:hover .skill-name {
     color: var(--text-main);
+}
+
+.GitHub {
+    color: var(--icon-color);
 }
 
 @media (max-width: 576px) {

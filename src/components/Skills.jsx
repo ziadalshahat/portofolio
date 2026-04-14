@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
     FaHtml5, FaCss3Alt, FaReact, FaNodeJs,
     FaGithub, FaFigma
@@ -26,7 +27,7 @@ const Skills = () => {
         {
             category: 'Tools', items: [
                 { name: 'Git', icon: <BiLogoGit color="#F05032" /> },
-                { name: 'GitHub', icon: <FaGithub color="#FAFAFA" /> },
+                { name: 'GitHub', icon: <FaGithub className='GitHub' /> },
                 { name: 'Figma', icon: <FaFigma color="#F24E1E" /> },
                 { name: 'Postman', icon: <SiPostman color="#FF6C37" /> },
             ]
@@ -37,20 +38,35 @@ const Skills = () => {
         <section id="skills" className="skills-section">
             <div className="container">
                 <div className="section-header">
-                    <h2 className="section-title animate-slide-up">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="section-title"
+                    >
                         My <span className="highlight">Skills</span>
-                    </h2>
-                    <p className="section-subtitle animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="section-subtitle"
+                    >
                         The main technologies and tools I use to build seamless applications.
-                    </p>
+                    </motion.p>
                 </div>
 
                 <div className="skills-container">
                     {skills.map((skillGroup, idx) => (
-                        <div
+                        <motion.div
                             key={skillGroup.category}
-                            className="skill-category animate-slide-up"
-                            style={{ animationDelay: `${0.3 + idx * 0.1}s` }}
+                            className="skill-category"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                         >
                             <h3 className="category-title">{skillGroup.category}</h3>
                             <div className="skills-grid">
@@ -63,7 +79,7 @@ const Skills = () => {
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

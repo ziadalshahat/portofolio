@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
 import '../styles/Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,8 +17,13 @@ const Navbar = () => {
     const navLinks = [
         { name: 'Home', href: '#home' },
         { name: 'About', href: '#about' },
+        { name: 'Education', href: '#education' },
         { name: 'Skills', href: '#skills' },
+        { name: 'Experience', href: '#experience' },
+        { name: 'Services', href: '#services' },
         { name: 'Projects', href: '#projects' },
+        { name: 'Achievements', href: '#achievements' },
+        { name: 'Testimonials', href: '#testimonials' },
         { name: 'Contact', href: '#contact' },
     ];
 
@@ -40,14 +45,26 @@ const Navbar = () => {
                     ))}
                 </ul>
 
-                {/* Mobile Toggle */}
-                <button
-                    className="mobile-toggle"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    aria-label="Toggle navigation"
-                >
-                    {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-                </button>
+                <div className="nav-actions">
+                    <button
+                        className="theme-toggle"
+                        onClick={toggleTheme}
+                        aria-label="Toggle Theme"
+                    >
+                        <span className={`toggle-icon ${theme === 'dark' ? 'icon-enter' : 'icon-exit'}`}>
+                            {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
+                        </span>
+                    </button>
+
+                    {/* Mobile Toggle */}
+                    <button
+                        className="mobile-toggle"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        aria-label="Toggle navigation"
+                    >
+                        {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Nav */}

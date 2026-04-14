@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import '../styles/Projects.css';
 
@@ -12,18 +13,18 @@ const Projects = () => {
             demo: 'https://medscope-v3.vercel.app/'
         },
         {
-            title: 'Share Your Place',
-            description: 'A dedicated travel platform seamlessly connecting passionate travelers with hospitable local hosts.',
-            tech: ['React', '.NET'],
-            github: '#',
-            demo: '#'
+            title: 'Popcorn',
+            description: 'A movie streaming platform with a modern interface and seamless user experience.',
+            tech: ['React', 'REST API', "Node.js"],
+            github: 'https://github.com/ziadalshahat/POPCORN',
+            demo: 'https://popcorn-gamma-bice.vercel.app/'
         },
         {
-            title: 'ecomerce for cozmatics',
-            description: 'E-commerce platform for cosmetics and beauty products.',
-            tech: ['React', '.NET Core'],
-            github: '#',
-            demo: '#'
+            title: 'Nimbus',
+            description: 'Weather application with a modern interface and seamless user experience.',
+            tech: ['React', 'REST API', "Node.js"],
+            github: 'https://github.com/ziadalshahat/NIMBUS',
+            demo: 'https://nimbus-nine-neon.vercel.app/'
         }
     ];
 
@@ -31,20 +32,35 @@ const Projects = () => {
         <section id="projects" className="projects-section">
             <div className="container">
                 <div className="section-header">
-                    <h2 className="section-title animate-slide-up">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="section-title"
+                    >
                         Featured <span className="highlight">Projects</span>
-                    </h2>
-                    <p className="section-subtitle animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="section-subtitle"
+                    >
                         Some of the impactful solutions I have built recently.
-                    </p>
+                    </motion.p>
                 </div>
 
                 <div className="projects-grid">
                     {projects.map((project, idx) => (
-                        <div
+                        <motion.div
                             key={project.title}
-                            className="project-card glass animate-slide-up"
-                            style={{ animationDelay: `${0.3 + idx * 0.2}s` }}
+                            className="project-card glass"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.2 + idx * 0.2 }}
                         >
                             <div className="project-image-placeholder">
                                 <span className="project-watermark">{project.title.substring(0, 2).toUpperCase()}</span>
@@ -69,7 +85,7 @@ const Projects = () => {
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

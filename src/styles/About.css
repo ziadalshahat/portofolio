@@ -8,6 +8,7 @@
     font-weight: 700;
     margin-bottom: 3rem;
     letter-spacing: -1px;
+    color: var(--text-heading);
 }
 
 .about-content {
@@ -34,18 +35,19 @@
 .stat-card {
     padding: 1.5rem;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stat-card:hover {
     transform: translateY(-5px);
     border-color: var(--accent);
+    box-shadow: var(--shadow-md);
 }
 
 .stat-number {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--text-main);
+    color: var(--text-heading);
     margin-bottom: 0.5rem;
 }
 
@@ -64,8 +66,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow-lg);
 }
 
 /* ensure the image fills its placeholder */
@@ -108,7 +110,7 @@
 .logo-watermark {
     font-size: 4rem;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.05);
+    color: var(--bg-elevated);
     letter-spacing: -2px;
 }
 

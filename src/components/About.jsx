@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import '../styles/About.css';
 import meImage from '../assets/me.jpeg';
 
@@ -6,12 +7,24 @@ const About = () => {
     return (
         <section id="about" className="about-section">
             <div className="container">
-                <h2 className="section-title animate-slide-up">
+                <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="section-title"
+                >
                     About <span className="highlight">Me</span>
-                </h2>
+                </motion.h2>
 
                 <div className="about-content">
-                    <div className="about-text-wrapper animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                    <motion.div 
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                        className="about-text-wrapper"
+                    >
                         <p className="about-text">
                             I am an IT student at Egyptian E-Learning University passionate about building modern web applications.
                             My main focus is frontend development with React.
@@ -35,13 +48,19 @@ const About = () => {
                                 <p className="stat-label">Dedication</p>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="about-image-wrapper animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                    <motion.div 
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, delay: 0.4 }}
+                        className="about-image-wrapper"
+                    >
                         <div className="image-placeholder glass">
                             <img src={meImage} alt="My portrait" />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

@@ -1,7 +1,7 @@
 .footer-section {
     padding: 3rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--footer-border);
+    background: var(--footer-bg);
 }
 
 .footer-container {
@@ -42,7 +42,7 @@
 }
 
 .footer-socials a:hover {
-    color: var(--text-main);
+    color: var(--accent);
     transform: translateY(-2px);
 }
 
